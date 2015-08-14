@@ -1,12 +1,13 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 <script src="angular-validation.module.js"></script>
 <script src="angular-validation.directives.js"></script>
 <link rel="stylesheet" href="angular-validate.css">
 
 
-<div ng-app ng-init="world = 'world'">
+<div ng-app="angular-validation" ng-init="val='123'">
 	{{ "hello world " + world }}
 
-		<input type="text" ng-pattern="/^[0-9]{1,7}$/"></input>
+		<input id="hello" type="text" ng-model="val" validate>
+
 </div>

@@ -5,9 +5,10 @@
 <link rel="stylesheet" href="angular-validate.css">
 
 
-<div ng-app="angular-validation" ng-init="val='123'">
+<div ng-app="angular-validation"  ng-init="val='123'" >
 	{{ "hello world " + world }}
-
-		<input id="hello" type="text" ng-model="val" validate>
+	<form name="myform">
+		<input id="hello" name="hello" ng-controller="myctrl" type="text" ng-model="val" validate>
+	</form>
 
 </div>

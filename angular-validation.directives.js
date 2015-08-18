@@ -17,10 +17,6 @@
 				return {
 					pre: function preLink(scope, iElement, iAttrs, controller) { 
 						scope.focused=false;
-						scope.logerror=function(){
-							alert("passed");
-							return "hello";
-						};
 						var element= iElement[0];
 						var parentDiv = element.parentNode;
 						var errorMsg = angular.element($compile('<span class="form-hint-invalid" ng-show="'+iElement[0].form.name + '.' +iAttrs.name + '.$invalid && ('+iElement[0].form.name + '.' +iAttrs.name + '.$dirty || '+ iElement[0].form.name +'.$submitted)"  > {{' + iAttrs.hint +' }}</span>')(scope));
@@ -28,10 +24,9 @@
 						parentDiv.insertBefore(errorMsg[0],sib);
 						iElement.on('submit',function(){console.log("submitted")});
 						var form=angular.element(iElement[0].form);
-							form.on('submit',function(){console.log("form submitted");
+							form.on('submit',function(){
 							scope[iElement[0].form.name][iAttrs.name].$setDirty();
-							if(!scope.focused && scope[iElement[0].form.name][iAttrs.name].$invalid)
-							{
+							if(!scope.focused && scope[iElement[0].form.name][iAttrs.name].$invalid){
 								iElement[0].focus();
 								scope.focused=true;
 								$timeout(function(){scope.focused=false});
@@ -41,7 +36,6 @@
 				}
 			},
 		}
-
 	};
 }
 )()

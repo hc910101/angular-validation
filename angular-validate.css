@@ -1,3 +1,16 @@
-.ng-invalid {
-	background:red;
+input[type='submit']{
+	display:block;
+}
+
+input[type="text"].ng-dirty.ng-invalid {
+
+   border:2px solid red;
+    outline-color: #ff0000;
+}
+.ng-invalid.ng-dirty input:focus{
+
+}
+.form-hint-invalid{
+	background:yellow;
+
 }

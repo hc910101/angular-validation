@@ -5,10 +5,16 @@
 <link rel="stylesheet" href="angular-validate.css">
 
 
-<div ng-app="angular-validation"  ng-init="val='123'" >
+<div ng-app="form-hint"  >
 	{{ "hello world " + world }}
-	<form name="myform">
-		<input id="hello" name="hello" ng-controller="myctrl" type="text" ng-model="val" validate>
+	<form name="myform"  novalidate>
+		{{ myform.$dirty }}
+		<div>
+			<input id="hello" name="hello" type="text" ng-pattern="/^([a-zA-Z0-9_-]){3,5}$/" ng-model="val" hint="'length:3-5 '" required >
+			<input id="hello2" name="hello2" type="text" ng-pattern="/^([a-zA-Z0-9_-]){3,5}$/" ng-model="val2" hint="'length:4-6 '" required >
+			<input id="hello3" name="hello3" type="text" ng-pattern="/^([a-zA-Z0-9_-]){3,5}$/" ng-model="val3" hint="'length:5-7 '" required >
+			<input id="submit" name="submit" type="submit" ng-click="form-hint.$valid && logerror()">
+		</div>
 	</form>
 
 </div>

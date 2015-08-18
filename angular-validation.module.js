@@ -1,5 +1,4 @@
 (function(){
 	'use strict';
-	angular.module('angular-validation',[]);
-
+	angular.module('form-hint',[]);
 })()

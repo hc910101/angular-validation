@@ -1,5 +1,5 @@
 /*
-* Usage: <input type="text" hint="Please enter a integer" ng-pattern="/^\d+$/"/>
+* Usage: <form><input type="text" hint="Please enter a integer" ng-pattern="/^\d+$/"/></form>
 *
 * what it does: :
 * 			1. the input elements with the hint attribute will be set to $dirty when submit button is pressed

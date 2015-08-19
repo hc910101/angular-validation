@@ -13,6 +13,7 @@
 	function validate($compile,$parse,$timeout){
 		return{
 			restrict:'A',
+			require:'^form',
 			compile: function compile(tElement, tAttrs, transclude) {
 				return {
 					pre: function preLink(scope, iElement, iAttrs, controller) { 
